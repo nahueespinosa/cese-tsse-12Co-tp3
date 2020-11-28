@@ -50,3 +50,11 @@ void test_TurnOffAllLeds() {
     Leds_TurnAllOff();
     TEST_ASSERT_EQUAL_HEX16(0, ledsVirtuales);
 }
+
+void test_ReadSingleLed() {
+    bool state;
+
+    Leds_TurnOn(3);
+    state = Leds_IsOn(3);
+    TEST_ASSERT_EQUAL(true, state);
+}
