@@ -35,3 +35,7 @@ void Leds_TurnAllOn() {
 void Leds_TurnAllOff() {
     *address = LEDS_ALL_OFF;
 }
+
+bool Leds_IsOn(uint8_t led) {
+    return false;
+}

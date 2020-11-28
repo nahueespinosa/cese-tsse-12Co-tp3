@@ -6,3 +6,4 @@ void Leds_TurnOn(uint8_t led);
 void Leds_TurnOff(uint8_t led);
 void Leds_TurnAllOn();
 void Leds_TurnAllOff();
+bool Leds_IsOn(uint8_t led);
