@@ -44,3 +44,9 @@ void test_TurnOnAllLeds() {
     Leds_TurnAllOn();
     TEST_ASSERT_EQUAL_HEX16(0xFFFF, ledsVirtuales);
 }
+
+void test_TurnOffAllLeds() {
+    Leds_TurnAllOn();
+    Leds_TurnAllOff();
+    TEST_ASSERT_EQUAL_HEX16(0, ledsVirtuales);
+}
