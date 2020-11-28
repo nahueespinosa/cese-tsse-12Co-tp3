@@ -4,28 +4,25 @@
 #define LED_OFFSET      1
 #define LSB             1
 
-static uint16_t *direccion;
-static LedError_t RegistrarError;
+static uint16_t *address;
 
 uint16_t LedToMask(uint8_t led) {
     if (led > 16) {
-        RegistrarError();
         return 0;
     }
 
     return LSB << (led-LED_OFFSET);
 }
 
-void Leds_Create(uint16_t * puerto, LedError_t handler) {
-    *puerto = LEDS_ALL_OFF;
-    direccion = puerto;
-    RegistrarError = handler;
+void Leds_Create(uint16_t * port) {
+    *port = LEDS_ALL_OFF;
+    address = port;
 }
 
 void Leds_TurnOn(uint8_t led) {
-    *direccion |= LedToMask(led);
+    *address |= LedToMask(led);
 }
 
 void Leds_TurnOff(uint8_t led) {
-    *direccion &= ~LedToMask(led);
+    *address &= ~LedToMask(led);
 }
