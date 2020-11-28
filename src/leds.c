@@ -1,6 +1,7 @@
 #include "leds.h"
 
 #define LEDS_ALL_OFF    0x0000
+#define LEDS_ALL_ON     0xFFFF
 #define LED_OFFSET      1
 #define LSB             1
 
@@ -28,5 +29,9 @@ void Leds_TurnOff(uint8_t led) {
 }
 
 void Leds_TurnAllOn() {
-    *address = 0xFFFF;
+    *address = LEDS_ALL_ON;
+}
+
+void Leds_TurnAllOff() {
+    *address = LEDS_ALL_OFF;
 }
