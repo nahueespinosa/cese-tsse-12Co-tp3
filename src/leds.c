@@ -26,3 +26,7 @@ void Leds_TurnOn(uint8_t led) {
 void Leds_TurnOff(uint8_t led) {
     *address &= ~LedToMask(led);
 }
+
+void Leds_TurnAllOn() {
+    *address = 0xFFFF;
+}
