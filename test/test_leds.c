@@ -26,3 +26,16 @@ void test_SingleLedTurnOff(void) {
     Leds_TurnOff(1);
     TEST_ASSERT_EQUAL_HEX16(0, ledsVirtuales);
 }
+
+void test_MultipleLedTurnOn(void) {
+    Leds_TurnOn(7);
+    Leds_TurnOn(10);
+    TEST_ASSERT_EQUAL_HEX16(0x0240, ledsVirtuales);
+}
+
+void test_MultipleLedTurnOff(void) {
+    Leds_TurnAllOn();
+    Leds_TurnOff(6);
+    Leds_TurnOff(2);
+    TEST_ASSERT_EQUAL_HEX16(0xFFDD, ledsVirtuales);
+}
