@@ -1,17 +1,13 @@
 #include "leds.h"
 
 #define LEDS_ALL_OFF    0x0000
-#define LEDS_ALL_ON     0xFFFF
+#define LEDS_ALL_ON     ~LEDS_ALL_OFF
 #define LED_OFFSET      1
 #define LSB             1
 
 static uint16_t *address;
 
 uint16_t LedToMask(uint8_t led) {
-    if (led > 16) {
-        return 0;
-    }
-
     return LSB << (led-LED_OFFSET);
 }
 
