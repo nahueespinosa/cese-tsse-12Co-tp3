@@ -40,22 +40,22 @@ void test_TurnOffMultipleLeds(void) {
     TEST_ASSERT_EQUAL_HEX16(0xFFDD, ledsVirtuales);
 }
 
-void test_TurnOnAllLeds() {
+void test_TurnOnAllLeds(void) {
     Leds_TurnAllOn();
     TEST_ASSERT_EQUAL_HEX16(0xFFFF, ledsVirtuales);
 }
 
-void test_TurnOffAllLeds() {
+void test_TurnOffAllLeds(void) {
     Leds_TurnAllOn();
     Leds_TurnAllOff();
     TEST_ASSERT_EQUAL_HEX16(0, ledsVirtuales);
 }
 
-void test_ReadSingleLedOn() {
+void test_ReadSingleLedOn(void) {
     Leds_TurnOn(3);
     TEST_ASSERT_EQUAL(true, Leds_IsOn(3));
 }
 
-void test_ReadSingleLedOff() {
+void test_ReadSingleLedOff(void) {
     TEST_ASSERT_EQUAL(false, Leds_IsOn(3));
 }
