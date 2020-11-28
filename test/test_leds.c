@@ -53,11 +53,9 @@ void test_TurnOffAllLeds() {
 
 void test_ReadSingleLedOn() {
     Leds_TurnOn(3);
-    bool state = Leds_IsOn(3);
-    TEST_ASSERT_EQUAL(true, state);
+    TEST_ASSERT_EQUAL(true, Leds_IsOn(3));
 }
 
 void test_ReadSingleLedOff() {
-    bool state = Leds_IsOn(3);
-    TEST_ASSERT_EQUAL(false, state);
+    TEST_ASSERT_EQUAL(false, Leds_IsOn(3));
 }
